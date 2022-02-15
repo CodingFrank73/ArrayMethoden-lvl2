@@ -58,11 +58,18 @@ console.log(numArray2.sort(function (a, b) { return a - b }));
 
 // ---------- Aufgabe 3_1 ----------
 function reverseWords(valueToReverse) {
-    let reverseValue = valueToReverse.split("").reverse().join("");
-    console.log(reverseValue);
+
+    if (Array.isArray(valueToReverse) == true) {
+        valueToReverse.forEach(e => {
+            console.log(e.split("").reverse().join(""));
+        });
+    } else {
+        console.log(valueToReverse.split("").reverse().join(""));
+    }
 }
 
 reverseWords('Ella');
 reverseWords('Ella mag alle Bohnen');
 reverseWords('nenhoB ella gam allE');
+reverseWords(['Sergio', 'Hannah', 'Regallager', 'Reliefpfeiler', 'Rentner'])
 
